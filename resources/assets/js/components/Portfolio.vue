@@ -1,6 +1,6 @@
 <template>
 
-    <div class="content content-flex my-jobs"  v-if="projects.length > 0">
+    <div class="content content-flex my-jobs">
         <div class="col-xs-12 col-md-6 done-stuff">
             <h2 class="page-header text-center">Projektid</h2>
             <div class="job-list">

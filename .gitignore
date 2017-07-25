@@ -1,4 +1,6 @@
 
 vendor/
 node_modules/
+.idea/
 config.php
+*.tmp-browserify-38109767917573544871

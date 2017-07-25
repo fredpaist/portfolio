@@ -15,6 +15,6 @@ class ProjectController
     {
         $projects = Project::find_all();
 
-        return json_encode($projects);
+        return $projects ? json_encode($projects) : json_encode([]);
     }
 }
