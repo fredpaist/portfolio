@@ -1,0 +1,225 @@
+.main-panel{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+.main-content {
+    width: 75%;
+}
+.menu-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav li a {
+    font-size: 1.3em;
+    color:#66615B;
+}
+.nav li a > i {
+    margin-right: 5px;
+}
+.nav li > .router-link-exact-active {
+    color: #EB5E28;
+    opacity: 1;
+}
+.nav{
+    display: flex;
+    align-items: center;
+}
+.nav li .router-link-exact-active:before {
+    border-right: 14px solid #DDDDDD;
+    border-top: 14px solid transparent;
+    border-bottom: 14px solid transparent;
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: 43%;
+    bottom: -18px;
+    transform: rotate(90deg);
+}
+.nav li .router-link-exact-active:after {
+    border-right: 14px solid #f4f3ef;
+    border-top: 14px solid transparent;
+    border-bottom: 14px solid transparent;
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: 43%;
+    bottom: -17px;
+    transform: rotate(90deg);
+}
+
+.social a {
+    color: #66615B;
+    font-size: 1.3em;
+    margin-right: 10px;
+}
+.social a:hover {
+    font-size: 1.5em;
+}
+.indroduction {
+    font-family: 'Muli', "Helvetica", Arial, sans-serif;
+    color:  #66615B;
+}
+.intro-text {
+    text-align: justify;
+    line-height: 1.7;
+}
+
+#infografika {
+    text-align: center;
+}
+#infografika canvas{
+    position: absolute;
+}
+#infografika .first-sirkl {
+    padding: 20px 0;
+    margin-top: 30px;
+    position: relative;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#infografika .first-sirkl strong {
+    font-size: 22px;
+    color: #66615B;
+    line-height: 0.8;
+    font-weight: 100;
+}
+#infografika span {
+    display: block;
+    color: #999;
+    font-size: 16px;
+    margin-top: 10px;
+}
+#infografika span i {
+    color: #1682EF;
+    font-size: 22px;
+    margin-right: 6px;
+}
+
+.content-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+.button-warp {
+    margin: 20px 0;
+}
+
+.done-stuff {
+    font-family: 'Muli', "Helvetica", Arial, sans-serif;
+    color:  #66615B;
+}
+
+.done-stuff ul {
+    list-style: none;
+}
+.done-stuff ul li {
+    margin: 5px 0;
+}
+.done-stuff ul li > a {
+    font-size: 1.4em;
+    color:  #66615B;
+}
+
+.list-item {
+    width: 150px;
+    margin-bottom: 5px;
+}
+
+.project .project-header {
+    text-align: center;
+    margin-bottom: 15px;
+}
+.project h3.title {
+    font-family: 'Muli', "Helvetica", Arial, sans-serif;
+    margin-top: 10px;
+    color:  #66615B;
+    font-weight: bold;
+}
+.project div.project-text {
+    font-family: 'Muli', "Helvetica", Arial, sans-serif;
+    color:  #66615B;
+    font-size: 1.3em;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+}
+
+.project div.project-text i {
+    margin-right: 20px;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+}
+.search .input-group {
+    border: 1px solid #e0ddd1;
+    border-radius: 10px;
+}
+
+.files .file-item {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #f4f3ef;
+    margin-right: 5%;
+}
+
+.files .file-item a {
+    font-family: 'Muli', "Helvetica", Arial, sans-serif;
+    color:  #66615B;
+    display: flex;
+    justify-content: center;
+}
+.files .file-item:hover {
+    background-color:#f4f3ef;
+}
+
+.img-wrap img {
+	width: 100%;
+	height: auto;
+	border-radius: 10px;
+}
+
+.project-header img{
+        max-width: 100%;
+        height: auto;
+		max-height: 200px;
+    }
+	
+.job-list > div {
+	   overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+	}
+
+.project-url{
+    max-width: 90%;
+    word-wrap: break-word;
+}
+@media (max-width: 750px){
+    .main-content {
+        width: 100%;
+    }
+    .nav li {
+        text-align: center;
+    }
+    .job-list {
+        text-align: center;
+    }
+
+    .list-item {
+        width: 100%;
+    }
+
+    .project-text{
+        word-break: break-all;
+    }
+	.job-list > div {
+	margin-bottom: 10px;
+	white-space: normal;
+	}
+
+}

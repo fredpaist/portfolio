@@ -1,0 +1,10 @@
+{
+  "autoload": {
+    "psr-4": {
+      "Project\\": "include/framework",
+      "App\\": "include/class",
+      "Admin\\": "admin/controllers",
+      "Controller\\" : "public/controllers"
+    }
+  }
+}
