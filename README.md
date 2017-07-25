@@ -21,7 +21,7 @@ define('DB_USER', 'db_username');
 
 2. composer install
 3. npm install
-4. due to updates database tables have to be made manually, will be solved in the future (MySQL create table codes are stored in include/database)
+4. due to updates, database tables have to be made manually, will be solved in the future (MySQL create table codes are stored in include/database)
 
 ### Vue-js components are made with browersify:
 * npm run build-js - will create public/js/build.js from resources/assets/js/main.js
