@@ -2,9 +2,10 @@
 
 Projekt, mis oli vajalik kooli lõpetamiseks, nüüd olen võtnud eesmärgi seda uuendada ja paremaks teha.
 
-this is version 1 right now I'm trying to get rid of all old code
+this is version 1 - right now I'm trying to get rid of all old code
 * start using vue.js instead of jQuery
 * start using webpack so we can also use scss and postcss
+* messy php code cleanup
 
 ### Install
 
