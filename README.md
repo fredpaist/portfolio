@@ -23,6 +23,6 @@ define('DB_USER', 'db_username');
 3. npm install
 4. due to updates, database tables have to be made manually, will be solved in the future (MySQL create table codes are stored in include/database)
 
-### Vue-js components are made with browersify:
+### Vue-js components are made with browserify:
 * npm run build-js - will create public/js/build.js from resources/assets/js/main.js
 * npm run watch-js - not working yet (planning to change browserify to webpack)  
