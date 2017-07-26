@@ -18,16 +18,20 @@ class Router extends Params
     protected $request;
     protected $uri;
     public $variables = [];
+    protected $type;
 
     public function __construct()
     {
         $this->uri = $this->getUrl();
+
+        $this->type = $this->getMethod();
     }
 
     public function get($url)
     {
-
         $urler = new UrlMaker($url);
+
+        $urler->type = 'GET';
 
         $this->routes['get'][] = $urler;
 
@@ -36,8 +40,9 @@ class Router extends Params
 
     public function post($url)
     {
-
         $urler = new UrlMaker($url);
+
+        $urler->type = 'POST';
 
         $this->routes['post'][] = $urler;
 
@@ -51,12 +56,24 @@ class Router extends Params
 
     public function start()
     {
-        if(empty($_POST))
+        if($this->getMethod() == 'GET')
         {
             foreach ($this->routes['get'] as $route)
             {
                 $this->checkParams($route);
 
+                if($route->url == $this->uri)
+                {
+                    $this->startController($route);
+
+                    return $this;
+                }
+            }
+        }elseif($this->getMethod() == 'POST')
+        {
+            foreach ($this->routes['post'] as $route)
+            {
+                $this->checkParams($route);
                 if($route->url == $this->uri)
                 {
                     $this->startController($route);
@@ -77,7 +94,6 @@ class Router extends Params
         $controller = new $class;
 
         if(count($this->variables) > 0){
-
             echo $controller->$method(...$this->variables);
         }else {
             echo $controller->$method();
@@ -89,5 +105,10 @@ class Router extends Params
         $this->namespace = $namespace;
 
         return $this;
+    }
+
+    public function getMethod()
+    {
+        return $_SERVER['REQUEST_METHOD'];
     }
 }

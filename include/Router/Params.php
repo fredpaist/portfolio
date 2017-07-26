@@ -15,28 +15,39 @@ class Params
     {
         $input = $this->cutUrl($route->url);
 
-        $this->uri = $this->cutUrl($this->uri);
+        $url = $this->cutUrl($this->uri);
 
-        $this->getVariable($input);
+        $this->getVariable($input, $url,$route);
 
-        $this->uri = ROOT_URL. implode('/', $this->uri);
 
         return $this;
     }
 
-    public function getVariable($url_array)
+    public function getVariable($url_array,$url, $route)
     {
-        foreach ($url_array as $key => $item){
+        $variables = [];
+        if(count($url_array) == count($url)) {
+            foreach ($url as $key => $item) {
+                if($item != $url_array[$key]){
+                    preg_match("/{(.*)}/", $url_array[$key], $output);
+                    if (isset($output[1])) {
+                        $variables[] = $item;
+                        $url[$key] = $output[0];
+                    }
+                }
 
-            preg_match("/{(.*)}/", $item, $output);
-            if(isset($output[1]))
-            {
-                $this->variables[] =  $this->uri[$key];
-                $this->uri[$key] = $output[0];
             }
         }
 
-        return $this;
+        $url = ROOT_URL. implode('/', $url);
+
+        if($route->url == $url){
+            $this->variables = $variables;
+            $this->uri = $url;
+            return $this;
+        }else{
+            return false;
+        }
     }
 
     public function cutUrl($url)

@@ -16,6 +16,7 @@ class UrlMaker
     public $class;
     public $method;
     public $url;
+    public $type;
 
     public function __construct($url)
     {

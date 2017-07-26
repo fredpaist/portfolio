@@ -16,5 +16,4 @@ if(file_exists(ROOT_PATH. 'config.php')){
     $session = new Project\Session();
 }
 
-
 require_once 'router.php';
