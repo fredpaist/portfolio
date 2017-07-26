@@ -17,4 +17,9 @@ class FrontPageController
         return view('layout', 'resources');
     }
 
+    public function test($id)
+    {
+        echo $id;
+    }
+
 }

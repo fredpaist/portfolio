@@ -9,13 +9,15 @@
 namespace Router;
 
 use Router\UrlMaker;
+use Router\Params;
 
-class Router
+class Router extends Params
 {
     public $namespace;
     public $routes = [];
     protected $request;
     protected $uri;
+    public $variables = [];
 
     public function __construct()
     {
@@ -53,9 +55,10 @@ class Router
         {
             foreach ($this->routes['get'] as $route)
             {
+                $this->checkParams($route);
+
                 if($route->url == $this->uri)
                 {
-
                     $this->startController($route);
 
                     return $this;
@@ -73,7 +76,12 @@ class Router
 
         $controller = new $class;
 
-        echo $controller->$method();
+        if(count($this->variables) > 0){
+
+            echo $controller->$method(...$this->variables);
+        }else {
+            echo $controller->$method();
+        }
     }
 
     public function setNamespace($namespace){

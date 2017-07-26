@@ -16,9 +16,8 @@ $router->get('')
     ->method('FrontPageController@show')
     ->name('home');
 
-$router->get('sinnamai')
-    ->method('TestController@shoer')
+$router->get('test/{id}')
+    ->method('FrontPageController@test')
     ->name('test.test');
-
 
 $router->start();
