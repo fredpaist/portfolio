@@ -22007,7 +22007,7 @@ exports.default = {
 
       data: function data() {
             return {
-                  projects: '',
+                  projects: [],
                   active: 0
             };
       },
