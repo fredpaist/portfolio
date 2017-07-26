@@ -17,15 +17,15 @@ $router->get('')
 
 $router->get('test/{id}')
     ->method('FrontPageController@test')
-    ->name('test.test');
+    ->name('test.test1');
 
 $router->get('test/fred/{id}')
     ->method('FrontPageController@test')
-    ->name('test.test');
+    ->name('test.test2');
 
 $router->get('test/{id}/test')
     ->method('FrontPageController@test')
-    ->name('test.test');
+    ->name('test.test3');
 
 $router->post('posttest')->method('TestController@post')->name('test.post');
 

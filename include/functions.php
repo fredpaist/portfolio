@@ -43,3 +43,11 @@ function get_ip()
 	
 	return $ip;
 }
+
+
+function url($name, $variables = NULL)
+{
+    global $router;
+
+    return $router->getPageUrl($name, $variables);
+}

@@ -118,4 +118,26 @@ class Router extends Params
     {
         echo 'page not found';
     }
+
+    public function getPageUrl($name, $variables = NULL)
+    {
+        $urlObject = array_map(function($route) use ($name){
+                return $route->name == $name ?  $route->url : false;
+        }, $this->routes['get']);
+
+        if(empty($urlObject)){
+            $urlObject = array_map(function($route) use ($name){
+                return $route->name == $name ?  $route->url : false;
+            }, $this->routes['post']);
+        }
+
+        $url = array_values(array_filter($urlObject))[0];
+
+        if($variables)
+        {
+            $url = $this->setVariables($url, $variables);
+        }
+
+        return $url;
+    }
 }

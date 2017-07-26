@@ -20,6 +20,8 @@ class FrontPageController
     public function test($id)
     {
         echo $id;
+
+        echo '<br>'. url('test.test3', [1]);
     }
 
 }

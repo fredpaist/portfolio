@@ -58,4 +58,22 @@ class Params
 
         return $url_array;
     }
+
+    public function setVariables($url, $variables)
+    {
+        $cutted_url = $this->cutUrl($url);
+
+        foreach ($cutted_url as $key => $item) {
+                preg_match("/{(.*)}/", $item, $output);
+                if (isset($output[1])) {
+                    $cutted_url[$key] = $variables[0];
+                    unset($variables[0]);
+                }
+        }
+
+        $url = ROOT_URL. implode('/', $cutted_url);
+
+        return $url;
+
+    }
 }
