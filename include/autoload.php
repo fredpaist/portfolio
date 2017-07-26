@@ -17,4 +17,4 @@ if(file_exists(ROOT_PATH. 'config.php')){
 }
 
 
-
+require_once 'router.php';
