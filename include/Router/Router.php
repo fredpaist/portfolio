@@ -83,6 +83,8 @@ class Router extends Params
             }
         }
 
+        return $this->NotFound();
+
     }
 
     public function startController($route)
@@ -110,5 +112,10 @@ class Router extends Params
     public function getMethod()
     {
         return $_SERVER['REQUEST_METHOD'];
+    }
+
+    public function NotFound()
+    {
+        echo 'page not found';
     }
 }
