@@ -54,8 +54,7 @@ class LoginController
 
         $session->logout();
 
-        redirect_to(url('home'));
-
+        return redirect_to(url('home'));
     }
 
 }
