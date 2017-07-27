@@ -39,13 +39,23 @@ class LoginController
             $auth = new User();
 
             if($auth->auth($email, $pw)) {
-                redirect_to(ROOT_URL.'admin/');
+                return redirect_to(ROOT_URL.'admin/');
             } else {
                 $errors->setError('auth', 'failed to log in');
             }
         }
 
         return back();
+    }
+
+    public function logout()
+    {
+        global $session;
+
+        $session->logout();
+
+        redirect_to(url('home'));
+
     }
 
 }

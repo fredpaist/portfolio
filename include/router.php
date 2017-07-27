@@ -21,4 +21,6 @@ $router->get('login')->method('LoginController@show')->name('login');
 
 $router->post('login/try')->method('LoginController@login')->name('login.try');
 
+$router->get('logout')->method('LoginController@logout')->name('logout');
+
 $router->start();

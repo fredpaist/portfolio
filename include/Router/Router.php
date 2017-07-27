@@ -137,14 +137,15 @@ class Router extends Params
                 return $route->name == $name ?  $route->url : false;
             }, $this->routes['post']);
 
-            $url = array_values(array_filter($urlObject))[0];
+            $url = array_values(array_filter($urlObject));
         }
+
 
         if($variables)
         {
             $url = $this->setVariables($url, $variables);
         }
 
-        return $url;
+        return $url[0];
     }
 }

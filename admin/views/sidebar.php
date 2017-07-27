@@ -35,7 +35,7 @@
                 </a>
             </li>
             <li>
-                <a href="<?php echo MAIN_URL .'logout.php' ?>">
+                <a href="<?php echo url('logout') ?>">
                     <i class="ti-plug"></i>
                     <p>Logout</p>
                 </a>
