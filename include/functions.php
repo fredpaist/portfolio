@@ -51,3 +51,9 @@ function url($name, $variables = NULL)
 
     return $router->getPageUrl($name, $variables);
 }
+
+
+function back()
+{
+    redirect_to($_SESSION['referer']);
+}

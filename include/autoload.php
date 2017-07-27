@@ -14,6 +14,7 @@ if(file_exists(ROOT_PATH. 'config.php')){
     require_once ROOT_PATH. 'config.php';
     $database = new Project\MysqlConnection();
     $session = new Project\Session();
+    $errors = new \Project\Errors();
 }
 
 require_once 'router.php';

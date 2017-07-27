@@ -14,17 +14,20 @@ use Router\Params;
 class Router extends Params
 {
     public $namespace;
-    public $routes = [];
+    protected $routes = [];
     protected $request;
     protected $uri;
     public $variables = [];
     protected $type;
+    public $lastUrl;
 
     public function __construct()
     {
         $this->uri = $this->getUrl();
 
         $this->type = $this->getMethod();
+
+        $_SESSION['referer'] = isset($_SESSION['referer']) ? $_SESSION['referer'] : $this->uri;
     }
 
     public function get($url)
@@ -100,6 +103,8 @@ class Router extends Params
         }else {
             echo $controller->$method();
         }
+
+        $_SESSION['referer'] = $this->uri;
     }
 
     public function setNamespace($namespace){
@@ -122,16 +127,18 @@ class Router extends Params
     public function getPageUrl($name, $variables = NULL)
     {
         $urlObject = array_map(function($route) use ($name){
-                return $route->name == $name ?  $route->url : false;
+                return $route->name == $name ?  $route->url : '';
         }, $this->routes['get']);
 
-        if(empty($urlObject)){
+        $url = array_values(array_filter($urlObject));
+
+        if(empty($url)){
             $urlObject = array_map(function($route) use ($name){
                 return $route->name == $name ?  $route->url : false;
             }, $this->routes['post']);
-        }
 
-        $url = array_values(array_filter($urlObject))[0];
+            $url = array_values(array_filter($urlObject))[0];
+        }
 
         if($variables)
         {

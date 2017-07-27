@@ -72,7 +72,7 @@ class View
 
     function render() {
         extract($this->values);
-        global $session;
+        global $session, $errors;
         
         ob_start();
         $class = $this->class;

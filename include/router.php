@@ -11,26 +11,14 @@ $router = new Router();
 
 $router->setNamespace('Controller');
 
-$router->get('')
-    ->method('FrontPageController@show')
-    ->name('home');
+$router->get('')->method('FrontPageController@show')->name('home');
 
-$router->post('ajax')
-        ->method('ProjectController@projects')
-        ->name('ajax');
+$router->post('ajax')->method('ProjectController@projects')->name('ajax');
 
-$router->get('test/{id}')
-    ->method('FrontPageController@test')
-    ->name('test.test1');
+// Auth
 
-$router->get('test/fred/{id}')
-    ->method('FrontPageController@test')
-    ->name('test.test2');
+$router->get('login')->method('LoginController@show')->name('login');
 
-$router->get('test/{id}/test')
-    ->method('FrontPageController@test')
-    ->name('test.test3');
-
-$router->post('posttest')->method('TestController@post')->name('test.post');
+$router->post('login/try')->method('LoginController@login')->name('login.try');
 
 $router->start();

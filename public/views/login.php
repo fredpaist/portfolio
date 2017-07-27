@@ -7,12 +7,14 @@
  */
 require_once 'header.php';
 ?>
-    <div class="col-lg-12 text-center">
+    <div class="col-lg-12 text-center" id="body">
         <?php if(!empty($errors)) : ?>
             <div>
-                <?php foreach ( $errors as $error) : ?>
-                    <p class="text-danger"><?php echo $error ?></p>
-                <?php endforeach; ?>
+                <?php if($errors->getErrors()) : ?>
+                    <?php foreach ( $errors->getErrors() as $error) : ?>
+                        <p class="text-danger"><?php echo $error ?></p>
+                    <?php endforeach; ?>
+                <?php endif; ?>
             </div>
         <?php endif; ?>
         <div class="card">
@@ -21,7 +23,7 @@ require_once 'header.php';
             </div>
             <div class="col-md-3 col-xs-hidden"></div>
             <div class="content col-md-6 col-xs-12">
-                <form method="post">
+                <form method="post" action="<?php echo url('login.try') ?>">
 
                     <div class="row">
                         <div class="col-md-12">
