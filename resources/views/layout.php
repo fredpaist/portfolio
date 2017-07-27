@@ -59,10 +59,6 @@
                         <router-view></router-view>
                     </div>
                 </div>
-                <form method="post" action="./posttest">
-                    <input type="text" name="name">
-                    <input type="submit" value="hello">
-                </form>
             </div>
         </div>
     </div>

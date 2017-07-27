@@ -15,6 +15,10 @@ $router->get('')
     ->method('FrontPageController@show')
     ->name('home');
 
+$router->post('ajax')
+        ->method('ProjectController@projects')
+        ->name('ajax');
+
 $router->get('test/{id}')
     ->method('FrontPageController@test')
     ->name('test.test1');

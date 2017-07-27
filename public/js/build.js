@@ -22023,7 +22023,7 @@ exports.default = {
             var that = this;
             var data = { controller: 'ProjectController@projects' };
 
-            this.$http.post(location.protocol + '//' + location.host + '/ajax.php', data).then(function (response) {
+            this.$http.post(location.protocol + '//' + location.host + '/ajax', data).then(function (response) {
                   that.projects = response.body;
             }, function (response) {});
       }

@@ -50,7 +50,7 @@ export default {
       var that = this;
       var data = {controller : 'ProjectController@projects'};
 
-        this.$http.post(location.protocol + '//' + location.host + '/ajax.php', data).then(response => {
+        this.$http.post(location.protocol + '//' + location.host + '/ajax', data).then(response => {
             that.projects = response.body
           }, response => {
             // error callback
