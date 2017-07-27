@@ -27,3 +27,26 @@ define('DB_USER', 'db_username');
 ### Vue-js components are made with browserify:
 * npm run build-js - will create public/js/build.js from resources/assets/js/main.js
 * npm run watch-js - not working yet (planning to change browserify to webpack)  
+
+### Self built router
+
+start using router like this.
+```php
+use Router\Router;
+
+$router = new Router();
+
+$router->setNamespace('Controller');
+
+```
+
+declare routes 
+```php
+$router->get('url')->method('UrlController@show')->name('home');
+```
+
+variables can be used like in laravel
+```php
+$router->get('test/{id}')
+
+```
