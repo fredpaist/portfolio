@@ -7,9 +7,7 @@
  */
 
 function view($name, $place) {
-    $$name = new Project\View($name, $place);
-
-    return $$name;
+    return new Project\View($name, $place);
 }
 
 function redirect_to($url) {
